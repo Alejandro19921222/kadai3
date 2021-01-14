@@ -1,0 +1,13 @@
+
+<h2>Book detail</h2>
+<table>
+<% @books.each do |book| %>
+ <tbody>
+  <tr>
+<td></td>
+<td><%= book.title %></td>
+<td><%= book.body %></td>
+</tr>
+ </tbody>
+ <% end %>
+</table>
