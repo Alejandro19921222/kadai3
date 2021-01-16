@@ -10,7 +10,17 @@
   </head>
 
   <body>
+    <header>
     <% if user_signed_in? %>
+    <li>
+        <%= link_to "Home", user_path(current_user) %>
+      </li>
+      <li>
+        <%= link_to "Users", users_path %>
+      </li>
+      <li>
+        <%= link_to "Book", books_path %>
+      </li>
       <li>
         <%= link_to "logout", destroy_user_session_path, method: :delete %>
       </li>
@@ -28,8 +38,12 @@
         <%= link_to "login", new_user_session_path %>
       </li>
       <% end %>
+      </header>
 
 
+    <footer>
+    <p>CopyRight Infratop.inc</p>
+    </footer>
     <%= yield %>
   </body>
 </html>

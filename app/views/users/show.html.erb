@@ -1,10 +1,12 @@
+<%= render 'books/list', book: @book, user: @user, user_image: @user %>
+
 <h2>Books</h2>
 <table>
 <% @books.each do |book| %>
  <tbody>
   <tr>
 <td></td>
-<td><%= book.title %></td>
+<td><%= link_to book.title,book_path(@user.id)  %></td>
 <td><%= book.body %></td>
 </tr>
  </tbody>
