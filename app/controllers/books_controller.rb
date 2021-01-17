@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!
 
   def create
      @book = Book.new(book_params)
@@ -35,7 +36,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
-  def updated
+  def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
     redirect_to book_path(@book.id)
